@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../GCPCloudUseCases/.idea/GCPCloudUseCases.iml" filepath="$PROJECT_DIR$/../GCPCloudUseCases/.idea/GCPCloudUseCases.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PycharmProjects/.idea/PycharmProjects.iml" filepath="$PROJECT_DIR$/../PycharmProjects/.idea/PycharmProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PysparkRetailDatalakeOnpremProject_2_2024/.idea/PysparkRetailDatalakeOnpremProject_2_2024.iml" filepath="$PROJECT_DIR$/../PysparkRetailDatalakeOnpremProject_2_2024/.idea/PysparkRetailDatalakeOnpremProject_2_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apache-hive/.idea/apache-hive.iml" filepath="$PROJECT_DIR$/../apache-hive/.idea/apache-hive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/apache-kafka.iml" filepath="$PROJECT_DIR$/.idea/apache-kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../apache-spark/.idea/apache-spark.iml" filepath="$PROJECT_DIR$/../apache-spark/.idea/apache-spark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pyspark_programs/.idea/pyspark_programs.iml" filepath="$PROJECT_DIR$/../pyspark_programs/.idea/pyspark_programs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python-basics/.idea/python-basics.iml" filepath="$PROJECT_DIR$/../python-basics/.idea/python-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sql-basics/.idea/sql-basics.iml" filepath="$PROJECT_DIR$/../sql-basics/.idea/sql-basics.iml" />
+    </modules>
+  </component>
+</project>

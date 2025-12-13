@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../GCPCloudUseCases" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../PycharmProjects" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../apache-spark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../python-basics" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../sql-basics" vcs="Git" />
+  </component>
+</project>
