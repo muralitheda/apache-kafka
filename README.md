@@ -21,7 +21,7 @@ c. Written in **Scala**
 d. An Apache project initially developed in **LinkedIn** at the year 2007 then to Apache in 2012 by **Jay Kreps** in the name of **Franz Kafka**
 e. It is **not specifically designed for Hadoop** rather Hadoop ecosystem is just be one of its possible consumers.
 
-![img.png](files/img.png)
+![](files/img1.png)
 
 
 This document outlines the steps for installing both **Apache Kafka** and **Apache NiFi** on your VM, including crucial troubleshooting steps encountered during the Kafka setup.
