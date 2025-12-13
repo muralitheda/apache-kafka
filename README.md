@@ -103,4 +103,3 @@ The steps for installing Apache NiFi involve downloading the binary, extracting,
     ```
 
 -----
-e to proceed with a tutorial on how to configure NiFi to consume data from your new Kafka topic?
