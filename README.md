@@ -15,11 +15,11 @@
 
 ## Kafka Introduction:
 
-a. **PubSub/Kafka/EventHub** is a leading general purpose **publish-subscribe or producer-consumer, distributed messaging system**, which offers, linear scalability, strong durability and fault-tolerance support.
-b. Designed for handling of **real time activity** stream data such as logs, metrics collections.
-c. Written in **Scala**
-d. An Apache project initially developed in **LinkedIn** at the year 2007 then to Apache in 2012 by **Jay Kreps** in the name of **Franz Kafka**
-e. It is **not specifically designed for Hadoop** rather Hadoop ecosystem is just be one of its possible consumers.
+a. **PubSub/Kafka/EventHub** is a leading general purpose **publish-subscribe or producer-consumer, distributed messaging system**, which offers, linear scalability, strong durability and fault-tolerance support.  
+b. Designed for handling of **real time activity** stream data such as logs, metrics collections.  
+c. Written in **Scala**  
+d. An Apache project initially developed in **LinkedIn** at the year 2007 then to Apache in 2012 by **Jay Kreps** in the name of **Franz Kafka**  
+e. It is **not specifically designed for Hadoop** rather Hadoop ecosystem is just be one of its possible consumers.  
 
 ![](files/img1.png)
 
@@ -103,3 +103,4 @@ The steps for installing Apache NiFi involve downloading the binary, extracting,
     ```
 
 -----
+
