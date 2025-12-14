@@ -2,9 +2,41 @@
 
 ### Prerequisites (Configuration)
 
-Before running the code, you must ensure your PySpark setup can find the Kafka integration libraries.
+1. Before running the code, you must ensure your PySpark setup can find the Kafka integration libraries.
 
-When you run the script using `spark-submit`, you need to include the Kafka and Spark-SQL-Kafka package coordinates using the `--packages` flag:
+2. Create a Highly Replicated Topic (Replication=3) 🛡️
+
+#Create `clickstream_events` with a replication factor equal to the cluster size (3) & partition size (3).
+
+kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic clickstream_events
+kafka-topics.sh --list --zookeeper localhost:2181
+
+#`Producer`
+kafka-console-producer.sh --broker-list localhost:9092,localhost:9093,localhost:9094 --topic clickstream_events
+{"user_id": 1001, "timestamp": "2025-12-14T09:25:01", "page_url": "/home", "action": "view", "duration_ms": 1200}
+{"user_id": 1002, "timestamp": "2025-12-14T09:25:15", "page_url": "/product/shirt-x", "action": "view", "duration_ms": 3500}
+{"user_id": 1001, "timestamp": "2025-12-14T09:25:20", "page_url": "/product/shirt-x", "action": "click", "duration_ms": 0}
+{"user_id": 1003, "timestamp": "2025-12-14T09:25:25", "page_url": "/search?q=shoes", "action": "click", "duration_ms": 0}
+{"user_id": 1001, "timestamp": "2025-12-14T09:25:35", "page_url": "/add-to-cart", "action": "click", "duration_ms": 0}
+
+#`Consumer`
+kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic clickstream_events --from-beginning
+
+#[hduser@localhost tmp]$ `ls -ltr /tmp/kafka-logs*/clickstream*/*.log`
+-rw-r--r--. 1 hduser hduser 156 Dec 14 09:27 /tmp/kafka-logs-2/clickstream_events-0/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 156 Dec 14 09:27 /tmp/kafka-logs/clickstream_events-0/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 156 Dec 14 09:27 /tmp/kafka-logs-1/clickstream_events-0/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 302 Dec 14 09:27 /tmp/kafka-logs-1/clickstream_events-2/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 302 Dec 14 09:27 /tmp/kafka-logs/clickstream_events-2/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 302 Dec 14 09:27 /tmp/kafka-logs-2/clickstream_events-2/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 310 Dec 14 09:27 /tmp/kafka-logs/clickstream_events-1/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 310 Dec 14 09:27 /tmp/kafka-logs-2/clickstream_events-1/00000000000000000000.log
+-rw-r--r--. 1 hduser hduser 310 Dec 14 09:27 /tmp/kafka-logs-1/clickstream_events-1/00000000000000000000.log
+
+
+# Note: MESSAGES will be posted in ROUND ROBIN order to the PARTITIONS.
+
+3. When you run the script using `spark-submit`, you need to include the Kafka and Spark-SQL-Kafka package coordinates using the `--packages` flag:
 
 ```bash
 spark-submit \
@@ -80,11 +112,11 @@ click_counts_df = parsed_df.filter(col("action") == "click") \
 # --- 6. Write Stream to Console (The Action) ---
 # Start the streaming query. The output will be printed to the console
 # The 'complete' output mode is often used for aggregation results
-query = click_counts_df.writeStream \
-    .outputMode("complete") # 'complete' mode prints the entire updated result table every trigger
-    .format("console")      # Sink the result to the console
-    .option("truncate", "false") # Prevent truncating long strings
-    .trigger(processingTime='5 seconds') # Update the result every 5 seconds
+query = click_counts_df.writeStream\
+    .format("console")\
+    .option("truncate","false")\
+    .trigger(processingTime="5 seconds")\
+    .outputMode("complete")\ 
     .start()
 
 print(f"Streaming query started on topic: {KAFKA_TOPIC}. Press Ctrl+C to stop.")

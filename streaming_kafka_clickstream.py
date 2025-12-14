@@ -59,11 +59,11 @@ click_counts_df = parsed_df.filter(col("action") == "click") \
 # --- 6. Write Stream to Console (The Action) ---
 # Start the streaming query. The output will be printed to the console
 # The 'complete' output mode is often used for aggregation results
-query = click_counts_df.writeStream \
-    .outputMode("complete") # 'complete' mode prints the entire updated result table every trigger
-    .format("console")      # Sink the result to the console
-    .option("truncate", "false") # Prevent truncating long strings
-    .trigger(processingTime='5 seconds') # Update the result every 5 seconds
+query = click_counts_df.writeStream\
+    .format("console")\
+    .option("truncate","false")\
+    .trigger(processingTime="5 seconds")\
+    .outputMode("complete")\
     .start()
 
 print(f"Streaming query started on topic: {KAFKA_TOPIC}. Press Ctrl+C to stop.")
