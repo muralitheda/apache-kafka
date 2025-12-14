@@ -1,6 +1,6 @@
 ## PySpark Structured Streaming program that reads a clickstream from a Kafka topic and prints a result to the console.
 
-### Prerequisites (Configuration)
+## 1. Prerequisites (Configuration)
 
 1. Before running the code, you must ensure your PySpark setup can find the Kafka integration libraries.
 
@@ -46,7 +46,7 @@ spark-submit \
   # Replace 2.12 with your Scala version if different
 ```
 
-### PySpark Structured Streaming Code (`streaming_kafka_clickstream.py`)
+## 2. PySpark Structured Streaming Code (`streaming_kafka_clickstream.py`)
 
 This program will connect to Kafka, read the raw data, deserialize the JSON data in the `value` column, and then calculate a rolling count of clicks per user.
 
@@ -125,7 +125,7 @@ print(f"Streaming query started on topic: {KAFKA_TOPIC}. Press Ctrl+C to stop.")
 query.awaitTermination()
 ```
 
-### Expected Console Output
+## 3. Expected Console Output
 
 When you run this and send data to your Kafka topic (e.g., using a Kafka producer script), the console will print a new batch every 5 seconds, showing the updated count of clicks for each user:
 
