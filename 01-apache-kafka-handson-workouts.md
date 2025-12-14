@@ -1,10 +1,6 @@
-This is a detailed set of hands-on Kafka exercises covering single-broker setup, producing, consuming, and scaling up to a multi-broker cluster to test fault tolerance.
-
-That's a great idea\! Adding icons, emojis, and formatting effects can make the complex command-line information much more engaging and easier to follow.
-
-Here is the improvised version of the Kafka Workouts, using emojis, headings, code highlighting, and visual separators.
-
 ## 🚀 Apache Kafka Hands-On Workouts
+
+This is a detailed set of hands-on Kafka exercises covering single-broker setup, producing, consuming, and scaling up to a multi-broker cluster to test fault tolerance.
 
 ### 🎯 **Part 1: Single Broker Setup & Basic Operations**
 
