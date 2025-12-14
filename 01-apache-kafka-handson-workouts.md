@@ -2,6 +2,10 @@
 
 This is a detailed set of hands-on Kafka exercises covering single-broker setup, producing, consuming, and scaling up to a multi-broker cluster to test fault tolerance.
 
+⚠️ Prerequisite Note: Setup Required!
+
+Before attempting these workouts, you must go through the linked README file . The installation steps for Zookeeper and Kafka are mentioned there, and these services must be running locally before you execute any of the commands below.
+
 ### 🎯 **Part 1: Single Broker Setup & Basic Operations**
 
 These steps establish the fundamental workflow of creating a topic, publishing, and consuming data in a single-node environment.
