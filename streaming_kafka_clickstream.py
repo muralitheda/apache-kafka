@@ -1,3 +1,12 @@
+"""
+author: muralitheda
+purpose: Realtime clickstream data processing using PySpark coming from kafka topic
+
+Execute:
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 /home/hduser/apache-kafka/streaming_kafka_clickstream.py
+"""
+
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, col, count, current_timestamp
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, LongType, TimestampType
