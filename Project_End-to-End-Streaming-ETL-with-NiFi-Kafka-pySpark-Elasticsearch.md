@@ -159,6 +159,11 @@ http://api.randomuser.me/
    * Kafka brokers & topic in `PublishKafka`
 4. Connect processors and start the flow
 
+<details>
+  <summary> Click to view the screenshot</summary>
+  <img src="files/img10" alt="Diagram">
+</details>
+
 ---
 
 ### 🔍 Validation: Kafka Consumer Test
@@ -293,6 +298,12 @@ df_final.writeStream \
    * Metric visualization → **Document Count**
 
 ✔️ Live streaming data visible in Kibana
+
+<details>
+  <summary> Click to view the screenshot</summary>
+  <img src="files/img11" alt="Diagram">
+</details>
+
 
 ---
 
