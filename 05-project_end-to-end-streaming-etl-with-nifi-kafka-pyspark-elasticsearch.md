@@ -163,6 +163,8 @@ http://api.randomuser.me/
   <summary> Click to view the screenshot</summary>
 
   ![](files/img10.png)
+   ![img.png](files/img13.png)
+   ![img_1.png](files/img14.png)
 </details>
 
 ---
