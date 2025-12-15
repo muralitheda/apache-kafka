@@ -161,7 +161,7 @@ http://api.randomuser.me/
 
 <details>
   <summary> Click to view the screenshot</summary>
-  <img src="files/img10" alt="Diagram">
+  ![](files/img10.png)
 </details>
 
 ---
@@ -301,7 +301,7 @@ df_final.writeStream \
 
 <details>
   <summary> Click to view the screenshot</summary>
-  <img src="files/img11" alt="Diagram">
+   ![](files/img11.png)
 </details>
 
 
