@@ -161,6 +161,7 @@ http://api.randomuser.me/
 
 <details>
   <summary> Click to view the screenshot</summary>
+
   ![](files/img10.png)
 </details>
 
@@ -301,6 +302,7 @@ df_final.writeStream \
 
 <details>
   <summary> Click to view the screenshot</summary>
+
    ![](files/img11.png)
 </details>
 
